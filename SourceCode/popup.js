@@ -1427,18 +1427,9 @@ async function runCapture() {
     }
 
     setStatus("Pointing...");
-    // The Decisions locator belongs to Gemini. In NVIDIA mode use a saved Gemini
-    // key if one exists; otherwise anchoring relies on DOM targets alone.
-    let locatorKey = "";
-    if (provider === "gemini") {
-      locatorKey = apiKey;
-    } else {
-      try {
-        locatorKey = (await storageGet(STORAGE_KEY)) || "";
-      } catch (err) {
-        locatorKey = "";
-      }
-    }
+    // The Decisions locator is Gemini-only. NVIDIA mode never touches Google:
+    // it anchors from the page's DOM targets, then its own coordinates.
+    const locatorKey = provider === "gemini" ? apiKey : "";
     const annotations = await locateAnnotations(locatorKey, base64Image, result, pageContext);
     setStatus("");
 

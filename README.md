@@ -44,16 +44,8 @@ toolbar / in-page launcher
 
 ## Install
 
-### Option A — signed XPI (permanent)
+### Signed XPI
 Go to releases and then click the .xpi file and firefox will promt you to install it
-
-Signing note: `about:debugging` add-ons are always temporary. To keep SnapLite after a restart, the XPI must be signed by Mozilla (self-distribution on [addons.mozilla.org](https://addons.mozilla.org/developers/addon/submit/) works and stays unlisted), or you run Firefox ESR / Developer Edition / Nightly with `xpinstall.signatures.required = false`.
-
-### Option B — temporary, for development
-
-1. `about:debugging` → **This Firefox** → **Load Temporary Add-on…**
-2. Select `manifest.json`.
-3. **Reload** after edits; **Remove** to unload.
 
 ## Setup
 

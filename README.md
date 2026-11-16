@@ -45,10 +45,7 @@ toolbar / in-page launcher
 ## Install
 
 ### Option A — signed XPI (permanent)
-
-1. Download the signed `.xpi` (or build one, see below).
-2. Open it in Firefox and accept the prompt, or use `about:addons` → gear → **Install Add-on From File…**.
-3. Accept the permission request — the extension needs access to page content to draw its overlay and to capture the tab.
+Go to releases and then click the .xpi file and firefox will promt you to install it
 
 Signing note: `about:debugging` add-ons are always temporary. To keep SnapLite after a restart, the XPI must be signed by Mozilla (self-distribution on [addons.mozilla.org](https://addons.mozilla.org/developers/addon/submit/) works and stays unlisted), or you run Firefox ESR / Developer Edition / Nightly with `xpinstall.signatures.required = false`.
 

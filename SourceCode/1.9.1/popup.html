@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SnapLite</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <div class="brand">
+          <span class="logo-badge">
+            <svg class="logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                d="M12 2.5 15 9l6.5 3-6.5 3-3 6.5-3-6.5L2.5 12 9 9z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          <div class="brand-text">
+            <div class="brand-line">
+              <h1>SnapLite</h1>
+              <span class="badge">i-Ready</span>
+            </div>
+            <p class="tagline">Full-resolution capture &middot; answer only</p>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button
+            id="settingsToggle"
+            class="icon-button"
+            type="button"
+            aria-expanded="false"
+            aria-controls="settingsPanel"
+            title="API key settings"
+          >
+            API key
+          </button>
+          <button id="closePanel" class="icon-button close" type="button" title="Close panel" hidden>
+            <span aria-hidden="true">&times;</span>
+            <span class="visually-hidden">Close SnapLite</span>
+          </button>
+        </div>
+      </header>
+
+      <section id="settingsPanel" class="panel" hidden>
+        <div class="provider-row" role="group" aria-label="Answer model">
+          <button class="provider" type="button" data-provider="gemini" aria-pressed="true">
+            Gemini 3.5 Flash-Lite
+          </button>
+          <button class="provider" type="button" data-provider="nvidia" aria-pressed="false">
+            NVIDIA Nemotron VL
+          </button>
+        </div>
+        <label class="field-label" for="apiKey" id="keyLabel">Gemini API key</label>
+        <div class="key-row">
+          <input
+            id="apiKey"
+            type="password"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="AIza..."
+            aria-describedby="keyHint"
+          />
+          <button id="revealKey" class="ghost" type="button" aria-label="Show API key">
+            Show
+          </button>
+        </div>
+        <div class="key-actions">
+          <button id="saveKey" class="primary small" type="button">Save key</button>
+          <span id="keyStatus" class="hint" role="status"></span>
+        </div>
+        <p id="keyHint" class="hint">
+          Stored only in this browser via <code>browser.storage.local</code>.
+          <a id="keyLink" href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer">
+            Get a key
+          </a>
+        </p>
+      </section>
+
+      <main class="main">
+        <div id="permissionBanner" class="banner" hidden>
+          <p class="banner-text">Screen capture needs one-time site access.</p>
+          <button id="grantAccess" class="primary small" type="button">
+            Enable screen access
+          </button>
+        </div>
+
+        <label class="field-label" for="prompt">Prompt</label>
+        <textarea
+          id="prompt"
+          rows="3"
+          placeholder="Ask about this i-Ready question, e.g. &quot;What is the answer?&quot;"
+          aria-describedby="promptHint"
+        ></textarea>
+        <p id="promptHint" class="hint">Enter sends &middot; Shift+Enter adds a new line</p>
+
+        <div class="actions">
+          <button id="capture" class="primary" type="button">
+            <span class="button-label">Capture &amp; Answer</span>
+          </button>
+          <button id="clear" class="ghost" type="button">Clear</button>
+        </div>
+
+        <div id="status" class="status" role="status" aria-live="polite" hidden>
+          <span class="spinner" aria-hidden="true"></span>
+          <span id="statusText">Capturing...</span>
+        </div>
+
+        <div id="error" class="error" role="alert" hidden></div>
+
+        <section class="output" aria-labelledby="responseHeading">
+          <div class="output-header">
+            <h2 id="responseHeading">Answer</h2>
+            <button id="copy" class="ghost small" type="button" disabled>
+              Copy Response
+            </button>
+          </div>
+          <pre id="response" class="response" tabindex="0">No answer yet. Capture an i-Ready question to get started.</pre>
+        </section>
+      </main>
+
+      <p class="footer-note">
+        Built specifically for i-Ready lessons &middot; captures the visible tab at full resolution (PNG)
+      </p>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

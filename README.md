@@ -54,7 +54,7 @@ Open the toolbar popup → **API key**:
 1. Pick a provider: **Gemini 3.5 Flash-Lite** or **NVIDIA Nemotron VL**.
 2. Paste the matching key and hit **Save key**:
    - Gemini — https://aistudio.google.com/app/apikey (`AIza…`)
-   - NVIDIA — https://build.nvidia.com/nvidia/nemotron-3.5-super-vl-120b-a12b (`nvapi-…`)
+   - NVIDIA — [https://build.nvidia.com/nvidia/nemotron-3.5-super-vl-120b-a12b](https://build.nvidia.com/settings/api-keys) (`nvapi-…`)
 3. Each provider keeps its own key, so switching never loses the other one.
 
 ## Usage

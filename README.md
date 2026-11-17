@@ -48,7 +48,7 @@ toolbar / in-page launcher
 ## Install
 
 ### Signed XPI
-Go to releases and then click the .xpi file and firefox will promt you to install it
+Go to releases and then click the .xpi file and if you have firefox it will prompt you to install it
 
 ## Setup
 

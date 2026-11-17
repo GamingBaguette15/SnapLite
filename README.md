@@ -20,7 +20,7 @@ Built for homework, quiz and math-practice sites (i-Ready, Mathopolis, or anythi
 - **Answers drawn on the page.** A floating launcher opens a panel, and callout bubbles with SVG arrows point at the exact fields.
 - **DOM-anchored placement.** The content script lists the page's real inputs and choice buttons, numbers them, and sends their labels to the model. A returned `targetId` is measured with `getBoundingClientRect()` at layout time — so bubbles follow scrolling, reflow and fullscreen instead of relying on pixel guessing.
 - **Exact answer → choice matching.** If the answer is verbatim one of the on-page options, it anchors to that button with no model involved.
-- **Decision-API locator.** When nothing matches, `gemini-decision-1` answers a batch of calibrated yes/no questions over a screenshot grid (10×6 → 6×5 → 5×5) to find the field.
+- **Decision-API locator.** (If gemini API is selected) When nothing matches, `gemini-decision-1` answers a batch of calibrated yes/no questions over a screenshot grid (10×6 → 6×5 → 5×5) to find the field.
 - **Iframe aware.** Injected into every frame (`all_frames`), so lessons rendered inside nested iframes still contribute their answer targets.
 - **Per-site opt-in.** Enable or remove the overlay for the current site from the toolbar popup; it stays dormant everywhere else.
 - **Keyboard-first.** Enter submits, Shift+Enter adds a newline, Escape closes the panel.

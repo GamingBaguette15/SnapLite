@@ -2,6 +2,9 @@ A Firefox extension that screenshots the page you're on, asks a vision model, an
 
 Built for homework, quiz and math-practice sites (i-Ready, Mathopolis, or anything you opt in), but it works on any page you enable.
 
+## Yes you can use the free tier apis specially with nvidia build
+---
+
 ![Firefox](https://img.shields.io/badge/Firefox-142%2B-FF7139?logo=firefoxbrowser&logoColor=white)
 ![Manifest V3](https://img.shields.io/badge/Manifest-V3-blue)
 ![No build step](https://img.shields.io/badge/build-none%20required-brightgreen)
